@@ -1,0 +1,32 @@
+name: Auto Merge Translations
+
+on:
+  pull_request:
+    types: [synchronize, opened, reopened]
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set Up Custom Merge Driver
+        run: |
+          chmod +x .github/scripts/merge_head_10.sh
+          git config --global merge.translations_merge.driver "bash $(pwd)/.github/scripts/merge_head_10.sh %A %B %O"
+          echo "your_folder/** merge=translations_merge" >> .gitattributes
+          git add .gitattributes
+          git commit -m "Apply custom merge driver" || echo "No changes to commit"
+
+      - name: Attempt Merge
+        run: |
+          git checkout $GITHUB_HEAD_REF
+          git merge origin/$GITHUB_BASE_REF || true  # Prevent exit on conflict
+          git add -u  # Stage resolved files
+          git commit -m "Auto-resolved translation merge conflicts" || echo "No translation conflicts detected"
+          git push origin $GITHUB_HEAD_REF || echo "Nothing to push"

@@ -1,7 +1,7 @@
 * text=auto
-*.po text linguist-generated=true
-en.po text linguist-generated=false
-*.pot text
+*.po text linguist-generated=true merge=translations_merge
+en.po text linguist-generated=false merge=translations_merge
+*.pot text merge=translations_merge
 *.rb text
 *.sln text
 *.csproj text
