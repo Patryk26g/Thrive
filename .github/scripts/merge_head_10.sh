@@ -6,12 +6,12 @@ incoming="$2"  # Theirs (incoming branch)
 ancestor="$3"  # Base (common ancestor)
 
 # Take first 10 lines from the incoming branch
-head -n 10 "$incoming" > merged_file
+head -n 15 "$incoming" > merged_file
 
 # Merge lines 11+ using Git's built-in merge tool
-tail -n +11 "$ancestor" > ancestor_tail
-tail -n +11 "$current" > current_tail
-tail -n +11 "$incoming" > incoming_tail
+tail -n +16 "$ancestor" > ancestor_tail
+tail -n +16 "$current" > current_tail
+tail -n +16 "$incoming" > incoming_tail
 
 git merge-file -p current_tail ancestor_tail incoming_tail >> merged_file
 
