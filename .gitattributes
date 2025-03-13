@@ -37,3 +37,7 @@ locale/** merge=translations_merge
 *.shape filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.ogv filter=lfs diff=lfs merge=lfs -text
+
+*.po text linguist-generated=true merge=translations_merge
+en.po text linguist-generated=false merge=translations_merge
+*.pot text merge=translations_merge
