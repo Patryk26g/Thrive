@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-01-28 15:03+0200\n"
+"POT-Creation-Date: 2025-03-13 16:28+0100\n"
 "PO-Revision-Date: 2024-10-17 07:24+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Catalan <https://translate.revolutionarygamesstudio.com/projects/thrive/thrive-game/ca/>\n"
@@ -1860,7 +1860,7 @@ msgid "ENDOSYMBIOSIS_TITLE"
 msgstr "Falta un nom"
 
 #, fuzzy
-msgid "ENERGY_BALANCE_REQUIRED_COMPOUND_LINE"
+msgid "ENERGY_BALANCE_REQUIRED_COMPOUND_LINE2"
 msgstr "{0}: -{1} ATP"
 
 msgid "ENERGY_BALANCE_TOOLTIP_CONSUMPTION"
