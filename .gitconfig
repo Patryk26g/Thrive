@@ -1,0 +1,2 @@
+[merge "translations_merge"]
+    driver = bash .github/scripts/merge_head_10.sh %A %B %O
